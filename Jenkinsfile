@@ -4,7 +4,7 @@ pipeline {
     stage('Hello') {
       steps {
         echo 'Hello World'
-        sh "dotnetRestore HelloWorld/HelloWorld.sln"
+        sh "dotnetRestore"
       }
     }
   }
