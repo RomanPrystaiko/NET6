@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'build strted'
-        bat 'dotnetRestore'
+        bat 'dotnet restore HelloWorld/HelloWorld.sln'
       }
     }
   }
