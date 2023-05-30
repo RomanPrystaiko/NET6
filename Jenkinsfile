@@ -24,8 +24,9 @@ pipeline {
    stage('publish windows') {
       steps {
         bat 'dotnet publish HelloWorld/HelloWorld.sln --configuration Release'
-
-        bat 'zip -r HelloWorld-win-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/publish'
+        script{
+        zip zipFile: "HelloWorld-win-x64.zip", dir:"HelloWorld/HelloWorld/bin/Release/net6.0/publish"
+	  }
       }
     }
    stage('publish linux') {
