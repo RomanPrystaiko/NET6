@@ -25,13 +25,13 @@ pipeline {
       steps {
         bat 'dotnet publish HelloWorld/HelloWorld.sln --configuration Release  --no-restore --runtime win-x64 --self-contained true'
 
-     bat 'zip -r HelloWorld-win-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/win-x64/publish'
+     bat 'zip -r HelloWorld-win-x64.zip HelloWorld/HelloWorld/bin/Release/net7.0/win-x64/publish'
       }
     }
    stage('publish linux') {
       steps {
         bat 'dotnet publish  HelloWorld/HelloWorld.sln --configuration Release  --no-restore --runtime linux-x64 --self-contained true'
-       bat 'zip -r HelloWorld-linux-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/linux-x64/publish'
+       bat 'zip -r HelloWorld-linux-x64.zip HelloWorld/HelloWorld/bin/Release/net7.0/linux-x64/publish'
       }
     }
   }
