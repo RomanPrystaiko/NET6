@@ -25,8 +25,8 @@ pipeline {
       steps {
         bat 'dotnet publish HelloWorld/HelloWorld.sln --configuration Release'
         script{
-        zip zipFile: "HelloWorld-win-x64.zip", dir:"HelloWorld/HelloWorld/bin/Release/net6.0/publish"
-        archiveArtifacts "HelloWorld/HelloWorld/bin/Release/net6.0/publish/HelloWorld-win-x64.zip"
+        zip zipFile: "HelloWorld-win-x64.zip", dir:'HelloWorld/HelloWorld/bin/Release/net6.0/publish'
+        archiveArtifacts "HelloWorld-win-x64.zip"
 	  }
       }
     }
@@ -34,7 +34,7 @@ pipeline {
       steps {
         bat 'dotnet publish  HelloWorld/HelloWorld.sln --configuration Release --runtime ubuntu.18.04-x64 --self-contained true'
 	  script{
-          zip zipFile: "HelloWorld-linux-x64.zip", dir:"HelloWorld/HelloWorld/bin/Release/net6.0/ubuntu.18.04-x64/publish"
+          zip zipFile: "HelloWorld-linux-x64.zip", dir:'HelloWorld/HelloWorld/bin/Release/net6.0/ubuntu.18.04-x64/publish'
           archiveArtifacts "HelloWorld-linux-x64.zip"
         }
       }
