@@ -25,13 +25,13 @@ pipeline {
       steps {
         bat 'dotnet publish HelloWorld/HelloWorld.sln --configuration Release'
 
-        sh 'zip -r HelloWorld-win-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/publish'
+        bat 'zip -r HelloWorld-win-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/publish'
       }
     }
    stage('publish linux') {
       steps {
         bat 'dotnet publish  HelloWorld/HelloWorld.sln --configuration Release --runtime ubuntu.18.04-x64 --self-contained true'
-        sh 'zip -r HelloWorld-linux-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/ubuntu.18.04-x64/publish'
+        bat 'zip -r HelloWorld-linux-x64.zip HelloWorld/HelloWorld/bin/Release/net6.0/ubuntu.18.04-x64/publish'
       }
     }
   }
